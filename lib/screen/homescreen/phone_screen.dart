@@ -49,21 +49,27 @@ class PhoneScreen extends StatelessWidget {
                                   ? 8.r
                                   : 100.r,
                           backgroundColor: apps[index].color,
-                          width: 45,
+                          width: 75.w,
                           child: Center(
                             child: Icon(
                               apps[index].icon,
-                              size: 25,
+                              size: 45.sp,
                             ),
                           ),
                         ),
+                        SizedBox(
+                          height: 5.h,
+                        ),
                         Text(
                           apps[index].title,
-                          style: const TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white),
                         )
                       ],
                     ),
-                  ))
+                  )),
+          SizedBox(
+            width: 35.w,
+          )
         ],
       ),
     );
