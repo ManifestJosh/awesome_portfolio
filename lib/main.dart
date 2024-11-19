@@ -1,5 +1,6 @@
 import 'package:awesome_portfolio/providers/current_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import 'screen/homescreen/home_page.dart';
@@ -15,8 +16,16 @@ class Portfolio extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (context) => CurrentState())],
-      child: const MaterialApp(
-        home: HomePage(),
+      child: ScreenUtilInit(
+        designSize: const Size(1920, 1080),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return const MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: HomePage(),
+          );
+        },
       ),
     );
   }

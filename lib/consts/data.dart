@@ -59,7 +59,7 @@ List<AppsModels> apps = [
       color: Colors.white,
       title: 'LinkedIn',
       icon: Icons.social_distance,
-      link: 'https://linkedin.com/in/joshua-chisom'),
+      link: 'https://www.linkedin.com/in/joshua-chisom-16857921b/'),
   AppsModels(
       color: Colors.white,
       title: 'Github',

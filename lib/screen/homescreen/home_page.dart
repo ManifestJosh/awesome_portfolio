@@ -10,6 +10,7 @@ import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
@@ -53,7 +54,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Column(
             children: [
-              const SizedBox(height: 30),
+              SizedBox(height: 30.h),
               SizedBox(
                 height: size.height - 100,
                 child: Row(
@@ -61,10 +62,10 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Column(
                       children: [
-                        const SizedBox(height: 20),
-                        const frosted_Containers(
-                          height: 350,
-                          width: 250,
+                        SizedBox(height: 20.h),
+                        frosted_Containers(
+                          height: 450.h,
+                          width: 350.w,
                           child: Center(
                             child: Text(
                               'WELCOME,',
@@ -74,20 +75,20 @@ class _HomePageState extends State<HomePage> {
                                   fontFamily: AutofillHints.addressCity,
                                   fontStyle: FontStyle.italic,
                                   fontWeight: FontWeight.w900,
-                                  fontSize: 34),
+                                  fontSize: 34.sp),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10.h),
                         frosted_Containers(
-                          padding: const EdgeInsets.all(20),
-                          height: 200,
-                          width: 250,
+                          padding: EdgeInsets.all(20.sp),
+                          height: 300.h,
+                          width: 350.w,
                           child: Column(
                             children: [
                               Icon(
                                 Icons.connect_without_contact,
-                                size: 80,
+                                size: 80.sp,
                                 color: Colors.red.shade200,
                                 shadows: [
                                   const Shadow(
@@ -95,11 +96,11 @@ class _HomePageState extends State<HomePage> {
                                       color: Colors.white),
                                 ],
                               ),
-                              const Text(
+                              Text(
                                 "Let's Connect",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 20,
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -109,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 10.w,
                     ),
                     Consumer<CurrentState>(builder: (context, _, __) {
                       return DeviceFrame(
@@ -118,22 +119,22 @@ class _HomePageState extends State<HomePage> {
                       );
                     }),
                     SizedBox(
-                      width: 10,
+                      width: 10.w,
                     ),
                     Column(
                       children: [
-                        const SizedBox(height: 20),
+                        SizedBox(height: 20.h),
                         frosted_Containers(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          height: 350,
-                          width: 250,
+                          padding: EdgeInsets.symmetric(horizontal: 16.w),
+                          height: 450.h,
+                          width: 350.w,
                           child: Center(
                             child: Wrap(
                               children: List.generate(
                                 colorPalette.length,
                                 (index) => CustomButton(
                                   mainAxis: MainAxisAlignment.center,
-                                  margin: const EdgeInsets.all(16),
+                                  margin: EdgeInsets.all(16.sp),
                                   onPressed: () {
                                     currentState.ChangeGradient(index);
                                   },
@@ -142,39 +143,39 @@ class _HomePageState extends State<HomePage> {
                                       : Pressed.notPressed,
                                   animate: true,
                                   isThreeD: true,
-                                  borderRadius: 100,
-                                  height: 52,
-                                  width: 52,
+                                  borderRadius: 100.r,
+                                  height: 52.sp,
+                                  width: 52.sp,
                                   backgroundColor: colorPalette[index].color,
                                 ),
                               ),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10.h),
                         Consumer<CurrentState>(
                           builder: (context, currentstate, child) {
                             return frosted_Containers(
-                              padding: const EdgeInsets.all(16),
-                              height: 200,
-                              width: 250,
+                              padding: EdgeInsets.all(16.sp),
+                              height: 300.h,
+                              width: 350.w,
                               child: PageView.builder(
                                 controller: currentState.pageController,
                                 itemCount: currentState.quotes.length,
                                 itemBuilder: (context, index) {
                                   return SingleChildScrollView(
                                     scrollDirection: Axis.horizontal,
-                                    child: Container(
-                                      height: 200,
-                                      width: 200,
+                                    child: SizedBox(
+                                      height: 200.h,
+                                      width: 200.w,
                                       child: Text(
                                         currentState.quotes[index],
                                         textAlign: TextAlign.start,
                                         maxLines: 4,
                                         overflow: TextOverflow.ellipsis,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 16,
+                                          fontSize: 16.sp,
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
@@ -190,9 +191,9 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30.h),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: EdgeInsets.symmetric(horizontal: 16.0.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: List.generate(
@@ -212,9 +213,9 @@ class _HomePageState extends State<HomePage> {
                                   : Pressed.notPressed,
                           shadowColor: Colors.transparent,
                           animate: true,
-                          height: 28,
-                          width: 28,
-                          borderRadius: 100,
+                          height: 87.h,
+                          width: 87.w,
+                          borderRadius: 100.r,
                           isThreeD: true,
                           child: Center(
                             child: Icon(

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:awesome_portfolio/mini_screen/app_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -148,8 +149,8 @@ class _AppsState extends State<Apps> {
                   return Center(
                     child: Image.asset(
                       images[index],
-                      width: 350,
-                      height: 900,
+                      width: 350.w,
+                      height: 900.h,
                     ),
                   );
                 },
@@ -159,13 +160,13 @@ class _AppsState extends State<Apps> {
               controller: controller,
               count: images.length,
               effect: WormEffect(
-                dotWidth: 10,
-                dotHeight: 5,
+                dotWidth: 10.w,
+                dotHeight: 5.h,
                 activeDotColor: Colors.blue.shade200,
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 20.h,
             )
           ],
         ),

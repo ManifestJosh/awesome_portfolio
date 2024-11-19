@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class frosted_Containers extends StatelessWidget {
   final double height;
@@ -19,7 +20,7 @@ class frosted_Containers extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(16)),
+        borderRadius: BorderRadius.all(Radius.circular(16.r)),
         child: Stack(
           children: [
             BackdropFilter(

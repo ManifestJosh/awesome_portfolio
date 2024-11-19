@@ -4,6 +4,7 @@ import 'package:awesome_portfolio/providers/current_state.dart';
 import 'package:custom_button_builder/custom_button_builder.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import '../../consts/data.dart';
@@ -29,8 +30,8 @@ class PhoneScreen extends StatelessWidget {
           ...List.generate(
               apps.length,
               (index) => Container(
-                    margin: const EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 20),
+                    margin: EdgeInsets.only(
+                        top: 10.h, left: 10.w, right: 10.w, bottom: 20.h),
                     child: Column(
                       children: [
                         CustomButton(
@@ -42,11 +43,11 @@ class PhoneScreen extends StatelessWidget {
                                   apps[index].screen!);
                             }
                           },
-                          height: 45,
+                          height: 45.h,
                           borderRadius:
                               currentState.currentDevice == Devices.ios.iPhone13
-                                  ? 8
-                                  : 100,
+                                  ? 8.r
+                                  : 100.r,
                           backgroundColor: apps[index].color,
                           width: 45,
                           child: Center(

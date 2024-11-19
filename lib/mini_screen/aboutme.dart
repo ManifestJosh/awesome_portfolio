@@ -1,6 +1,7 @@
 import 'package:awesome_portfolio/providers/current_state.dart';
 import 'package:awesome_portfolio/screen/homescreen/phone_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class AboutMe extends StatelessWidget {
@@ -29,7 +30,7 @@ class AboutMe extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: const SafeArea(
+      body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
@@ -38,24 +39,24 @@ class AboutMe extends StatelessWidget {
             children: [
               Center(
                 child: CircleAvatar(
-                  radius: 50,
+                  radius: 50.r,
                   backgroundImage: AssetImage('assets/images/image.jpg'),
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 20.h,
               ),
               Text(
                 'Hi, I am Okeugo Joshua Chisom',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
               ),
               SizedBox(
-                height: 20,
+                height: 20.h,
               ),
               Text(
                 "I am a passionate Flutter developer with 1 year of hands-on experience in building cross-platform mobile applications. Throughout my journey, I've gained proficiency in Dart and Flutter's robust framework, allowing me to deliver responsive and visually appealing applications. My experience includes API integration, state management using GetX, and effective implementation of UI/UX designs that enhance user engagement and satisfaction.I excel in understanding client requirements and translating them into functional app features, ensuring that the final product aligns with their vision. My ability to communicate technical concepts clearly allows me to guide clients through project progress, fostering a collaborative environment. I am committed to delivering high-quality, scalable solutions that not only meet but exceed client expectations.",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w300),
               )
             ],
           ),

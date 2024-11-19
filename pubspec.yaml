@@ -42,6 +42,7 @@ dependencies:
   url_launcher: ^6.3.0
   rive: ^0.13.14
   smooth_page_indicator: ^1.2.0+3
+  flutter_screenutil: ^5.9.3
 
 dev_dependencies:
   flutter_test:

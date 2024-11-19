@@ -2,6 +2,7 @@ import 'package:awesome_portfolio/mini_screen/apps.dart';
 import 'package:awesome_portfolio/providers/current_state.dart';
 import 'package:awesome_portfolio/screen/homescreen/phone_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class AppImages extends StatelessWidget {
@@ -46,20 +47,20 @@ class AppImages extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 32,
+          padding: EdgeInsets.symmetric(
+            horizontal: 32.w,
           ),
           child: Column(
             children: [
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Expanded(
                 child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10),
+                      crossAxisSpacing: 10.w,
+                      mainAxisSpacing: 10.h),
                   itemCount: apps['apps_Images']!.length,
                   itemBuilder: (context, index) {
                     List<String> app_images = apps['apps_Images']!;
@@ -72,34 +73,34 @@ class AppImages extends StatelessWidget {
                         ));
                       },
                       child: Container(
-                        padding: const EdgeInsets.all(10),
-                        width: 150,
-                        height: 300,
+                        padding: EdgeInsets.all(10.sp),
+                        width: 150.w,
+                        height: 300.h,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(16)),
+                                BorderRadius.all(Radius.circular(16.r)),
                             boxShadow: [
                               BoxShadow(
                                   offset: const Offset(3, 8),
                                   color: Colors.black.withOpacity(0.2),
-                                  blurRadius: 3.0)
+                                  blurRadius: 3.0.r)
                             ]),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset(
                               app_images[index],
-                              width: 100,
-                              height: 70,
+                              width: 100.w,
+                              height: 70.h,
                             ),
-                            const SizedBox(
-                              height: 15,
+                            SizedBox(
+                              height: 15.h,
                             ),
                             Text(
                               app_names[index],
-                              style: const TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w600),
+                              style: TextStyle(
+                                  fontSize: 16.sp, fontWeight: FontWeight.w600),
                               textAlign: TextAlign.center, // Center the text
                             )
                           ],
